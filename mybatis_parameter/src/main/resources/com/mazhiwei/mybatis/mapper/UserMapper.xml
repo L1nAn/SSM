@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mazhiwei.mybatis.mapper.UserMapper">
+    <insert id="insertUser">
+        insert into job values (#{id}, #{jname}, #{description})
+    </insert>
+    <insert id="insertUsers">
+        insert into t_dept values (null,#{name},#{addr})
+    </insert>
+
+    <select id="selectByUserName" resultType="User">
+        select * from job where jname =#{username}
+    </select>
+    <select id="loginUser" resultType="user">
+        <!--select * from job where id = #{arg0} and jname = #{arg1}-->
+        select * from job where id = #{param1} and jname = #{param2}
+
+    </select>
+    <select id="checkLogin" resultType="User">
+        select * from job where id = #{id} and jname = #{username}
+    </select>
+    <select id="loginUsers" resultType="com.mazhiwei.mybatis.pojo.User">
+        select *
+        from job where id = #{id} and jname = #{username};
+    </select>
+    <select id="selectOne" resultType="com.mazhiwei.mybatis.pojo.User">
+        select * from job where id = #{id}
+    </select>
+    <select id="selectAll" resultType="com.mazhiwei.mybatis.pojo.User">
+        select * from job
+    </select>
+
+
+    <!--下面resultType设置了类型别名-->
+    <select id="getCount" resultType="Int">
+        select count(*) from job;
+    </select>
+    <select id="selectByUserId" resultType="java.util.Map">
+        select * from job where id = #{id}
+    </select>
+    <select id="selectByUserAll" resultType="java.util.Map">
+        select * from job
+    </select>
+    <select id="selectAllUser" resultType="java.util.Map">
+        select *
+        from job;
+    </select>
+</mapper>

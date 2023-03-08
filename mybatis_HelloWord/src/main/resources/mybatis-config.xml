@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <!--起别名-->
+<!--    <typeAliases>-->
+<!--        <package name="com.mazhiwei.pojo"/>-->
+<!--    </typeAliases>-->
+<!--    设置某个类型的别名-->
+<!--    <typeAliases>-->
+<!--        <typeAlias type="com.mazhiwei.mybatis.pojo.User"></typeAlias>-->
+<!--    </typeAliases>-->
+<!--  以包为单位，将包下面的所有的类型设置别名，即类名不区分大小写  -->
+    <typeAliases>
+        <package name="com.mazhiwei.mybatis.pojo"/>
+    </typeAliases>
+
+    <environments default="development">
+        <environment id="development">
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <property name="driver" value="com.mysql.jdbc.Driver"/>
+                <property name="url" value="jdbc:mysql:///db1?useSSL=false"/>
+                <property name="username" value="root"/>
+                <property name="password" value="mzw"/>
+            </dataSource>
+        </environment>
+    </environments>
+    <mappers>
+        <!--扫描mapper-->
+<!--        <package name="mappers/JobMapper.xml"/>-->
+<!--        <mapper resource="mappers/JobMapper.xml"></mapper>-->
+        <package name="com.mazhiwei.mybatis.mapper"/>
+    </mappers>
+</configuration>

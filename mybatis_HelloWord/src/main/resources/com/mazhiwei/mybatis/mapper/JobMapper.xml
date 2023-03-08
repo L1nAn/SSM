@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--  名称空间一定要和mapper文件的全类名一定要相同-->
+<mapper namespace="com.mazhiwei.mybatis.mapper.JobMapper">
+
+   <insert id="insertJob">
+       insert into job values (9,'组长','总理全局')
+   </insert>
+
+    <delete id="deleteJob">
+        delete from job where jname = '马治伟';
+    </delete>
+    <select id="selectByIdJob" resultType="com.mazhiwei.mybatis.pojo.User">
+        select * from job where id = 1
+    </select>
+    <select id="selectAllUser" resultType="com.mazhiwei.mybatis.pojo.User">
+        select * from job
+    </select>
+
+    <update id="updateJob">
+        update job set jname = '马治伟' where id = 7;
+    </update>
+</mapper>
