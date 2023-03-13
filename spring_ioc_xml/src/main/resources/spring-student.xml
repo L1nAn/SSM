@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="StudentOne" class="com.mazhiwei.spring.pojo.Student">
+        <property name="age" value="25"></property>
+        <property name="description" value="马治伟很帅"></property>
+        <property name="gender" value="男"></property>
+        <property name="name" value="马治伟"></property>
+
+     </bean>
+
+</beans>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mazhiwei.mapper.BrandMapper">
+
+    <resultMap id="BrandResultMap" type="brand">
+        <result property="companyName" column="company_name"></result>
+        <result property="brandName" column="brand_name"></result>
+    </resultMap>
+<!--    公共sql片段-->
+<!--    <sql id="brandColums">-->
+<!--        -->
+<!--    </sql>-->
+    <select id="selectBy" resultMap="BrandResultMap">
+        select *
+        from tb_brand
+        <where>
+
+            <if test="brandName != null and brandName != ''">
+                brand_name = #{brandName}
+            </if>
+            <if test="companyName != null and companyName != ''">
+                and company_name = #{companyName}
+            </if>
+            <if test="status != null">
+                and status = #{status}
+            </if>
+        </where>
+
+    </select>
+
+</mapper>
